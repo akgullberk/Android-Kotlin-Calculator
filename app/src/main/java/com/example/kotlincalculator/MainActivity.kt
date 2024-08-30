@@ -11,6 +11,10 @@ import com.example.kotlincalculator.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    var number1 : Double? = null
+    var number2 : Double? = null
+    var result : Double? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,20 +28,66 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        fun mySum(view : View){
 
+    }
+
+    fun mySum(view : View){
+
+        val number1 = binding.number1Text.text.toString().toDoubleOrNull()
+        val number2 = binding.number2Text.text.toString().toDoubleOrNull()
+
+        if(number1 != null && number2!=null){
+            result = number1!! + number2!!
+            binding.resultText.text = "Result: ${result}"
+
+        }else{
+            binding.resultText.text = "Enter number!"
         }
 
-        fun mySub(view : View){
+    }
 
+    fun mySub(view : View){
+
+        val number1 = binding.number1Text.text.toString().toDoubleOrNull()
+        val number2 = binding.number2Text.text.toString().toDoubleOrNull()
+
+        if(number1 != null && number2!=null){
+            result = number1!! - number2!!
+            binding.resultText.text = "Result: ${result}"
+
+        }else{
+            binding.resultText.text = "Enter number!"
         }
 
-        fun myMultiply(view : View){
+    }
 
+    fun myMultiply(view : View){
+
+        val number1 = binding.number1Text.text.toString().toDoubleOrNull()
+        val number2 = binding.number2Text.text.toString().toDoubleOrNull()
+
+        if(number1 != null && number2!=null){
+            result = number1!! * number2!!
+            binding.resultText.text = "Result: ${result}"
+
+        }else{
+            binding.resultText.text = "Enter number!"
         }
 
-        fun myDiv(view : View){
+    }
 
+    fun myDiv(view : View){
+
+        val number1 = binding.number1Text.text.toString().toDoubleOrNull()
+        val number2 = binding.number2Text.text.toString().toDoubleOrNull()
+
+        if(number1 != null && number2!=null){
+            result = number1!! / number2!!
+            binding.resultText.text = "Result: ${result}"
+
+        }else{
+            binding.resultText.text = "Enter number!"
         }
+
     }
 }
